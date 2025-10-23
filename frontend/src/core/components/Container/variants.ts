@@ -4,9 +4,13 @@
  */
 
 import { clsx } from 'clsx';
-import type { ContainerProps } from './types';
 
-export function getContainerClassName(props: ContainerProps): string {
+export interface ContainerVariantProps {
+  size?: 'small' | 'default' | 'large' | 'full';
+  className?: string;
+}
+
+export function getContainerClassName(props: ContainerVariantProps): string {
   const { size = 'default', className } = props;
 
   return clsx(
